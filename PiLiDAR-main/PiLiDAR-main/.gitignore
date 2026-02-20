@@ -1,0 +1,14 @@
+# temps
+.vscode
+.ipynb_checkpoints
+__pycache__
+Thumbs.db
+
+# box-pano for UV mapping
+meshlab/tmp/*
+
+# data directory
+/scans/
+
+# usb_dump
+usb_dump/
