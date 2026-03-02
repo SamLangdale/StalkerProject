@@ -1,0 +1,17 @@
+[2.100s] Invoking command in '/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker': PYTHONPATH=/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/install/stalker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker/build --no-deps symlink_data
+[2.941s] running develop
+[3.272s] running egg_info
+[3.274s] writing stalker.egg-info/PKG-INFO
+[3.278s] writing dependency_links to stalker.egg-info/dependency_links.txt
+[3.281s] writing entry points to stalker.egg-info/entry_points.txt
+[3.284s] writing requirements to stalker.egg-info/requires.txt
+[3.287s] writing top-level names to stalker.egg-info/top_level.txt
+[3.332s] reading manifest file 'stalker.egg-info/SOURCES.txt'
+[3.398s] writing manifest file 'stalker.egg-info/SOURCES.txt'
+[3.411s] running build_ext
+[3.411s] Creating /mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/install/stalker/lib/python3.10/site-packages/stalker.egg-link (link to .)
+[3.432s] Installing cloud_reader script to /mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/install/stalker/lib/stalker
+[3.454s] 
+[3.455s] Installed /mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker
+[3.457s] running symlink_data
+[3.526s] Invoked command in '/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker' returned '0': PYTHONPATH=/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/install/stalker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/Users/samla/Desktop/StalkerProject/stalker_ros/build/stalker/build --no-deps symlink_data
