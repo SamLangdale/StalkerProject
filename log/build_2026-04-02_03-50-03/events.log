@@ -1,0 +1,227 @@
+[0.000000] (-) TimerEvent: {}
+[0.000768] (3d_lidar) JobQueued: {'identifier': '3d_lidar', 'dependencies': OrderedDict()}
+[0.000848] (ldlidar_stl_ros2) JobQueued: {'identifier': 'ldlidar_stl_ros2', 'dependencies': OrderedDict()}
+[0.000877] (3d_lidar) JobStarted: {'identifier': '3d_lidar'}
+[0.009430] (ldlidar_stl_ros2) JobStarted: {'identifier': 'ldlidar_stl_ros2'}
+[0.099307] (-) TimerEvent: {}
+[0.199851] (-) TimerEvent: {}
+[0.305841] (-) TimerEvent: {}
+[0.351066] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'cmake'}
+[0.360002] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2'], 'cwd': '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sam'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sam'), ('OLDPWD', '/home/sam/stalkerProject'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2498'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sam'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sam'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/sam/.local/share/pnpm:/home/sam/taoStuff/tao_tutorials/setup/ngc-cli:/opt/ros/humble/bin:/home/sam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sam-ThinkPad-E14:@/tmp/.ICE-unix/2312,unix/sam-ThinkPad-E14:/tmp/.ICE-unix/2312'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/05254f34_49c0_4a7a_a3aa_ee3bdcc708e9'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P70TM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.118'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/sam/stalkerProject/StalkerProject/build/3d_lidar:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PNPM_HOME', '/home/sam/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble')]), 'shell': False}
+[0.405937] (-) TimerEvent: {}
+[0.506409] (-) TimerEvent: {}
+[0.582902] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.606904] (-) TimerEvent: {}
+[0.709533] (-) TimerEvent: {}
+[0.716945] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.732165] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.809636] (-) TimerEvent: {}
+[0.818436] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.830681] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.831420] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.832281] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.839428] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.911834] (-) TimerEvent: {}
+[0.931215] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.944404] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.945802] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.946792] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.952860] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.013387] (-) TimerEvent: {}
+[1.113712] (-) TimerEvent: {}
+[1.214762] (-) TimerEvent: {}
+[1.315216] (-) TimerEvent: {}
+[1.416489] (-) TimerEvent: {}
+[1.463520] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.516587] (-) TimerEvent: {}
+[1.561895] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.569631] (3d_lidar) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/sam/stalkerProject/StalkerProject/build/3d_lidar/build', '--no-deps', 'symlink_data'], 'cwd': '/home/sam/stalkerProject/StalkerProject/build/3d_lidar', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'sam', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/sam', 'OLDPWD': '/home/sam/stalkerProject', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2498', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/sam/stalkerProject/StalkerProject/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'sam', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'sam', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/sam/.local/share/pnpm:/home/sam/taoStuff/tao_tutorials/setup/ngc-cli:/opt/ros/humble/bin:/home/sam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/sam-ThinkPad-E14:@/tmp/.ICE-unix/2312,unix/sam-ThinkPad-E14:/tmp/.ICE-unix/2312', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/05254f34_49c0_4a7a_a3aa_ee3bdcc708e9', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.P70TM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.118', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/sam/stalkerProject/StalkerProject/build/3d_lidar', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:/home/sam/stalkerProject/StalkerProject/build/3d_lidar:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'PNPM_HOME': '/home/sam/.local/share/pnpm', 'VTE_VERSION': '6800'}, 'shell': False}
+[1.617722] (-) TimerEvent: {}
+[1.622498] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.704183] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.713805] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.717823] (-) TimerEvent: {}
+[1.729958] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.755494] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.783481] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.817922] (-) TimerEvent: {}
+[1.860532] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.868414] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.918028] (-) TimerEvent: {}
+[2.018838] (-) TimerEvent: {}
+[2.026747] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.063744] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.111934] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.120458] (-) TimerEvent: {}
+[2.127888] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.222112] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[2.222326] (-) TimerEvent: {}
+[2.222487] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[2.281891] (3d_lidar) StdoutLine: {'line': b'running develop\n'}
+[2.322437] (-) TimerEvent: {}
+[2.383922] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.385479] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.422540] (-) TimerEvent: {}
+[2.502937] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[2.522643] (-) TimerEvent: {}
+[2.580419] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.622751] (-) TimerEvent: {}
+[2.723080] (-) TimerEvent: {}
+[2.763496] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[2.768065] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.769166] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/include;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/core;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/dataprocess;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/filter;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/logger;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/networkcom;/home/sam/stalkerProject/StalkerProject/src/ldlidar_stl_ros2/ldlidar_driver/include/serialcom\n'}
+[2.769379] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.778272] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[2.778481] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[2.780723] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[2.783400] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.785355] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[2.796825] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.797052] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.798713] (ldlidar_stl_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.807686] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.823178] (-) TimerEvent: {}
+[2.825768] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[2.832659] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2\n'}
+[2.848218] (3d_lidar) StdoutLine: {'line': b'running egg_info\n'}
+[2.853897] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[2.856637] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'build'}
+[2.856721] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2', '--', '-j4', '-l4'], 'cwd': '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sam'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sam'), ('OLDPWD', '/home/sam/stalkerProject'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2498'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sam'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sam'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/sam/.local/share/pnpm:/home/sam/taoStuff/tao_tutorials/setup/ngc-cli:/opt/ros/humble/bin:/home/sam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sam-ThinkPad-E14:@/tmp/.ICE-unix/2312,unix/sam-ThinkPad-E14:/tmp/.ICE-unix/2312'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/05254f34_49c0_4a7a_a3aa_ee3bdcc708e9'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P70TM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.118'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/sam/stalkerProject/StalkerProject/build/3d_lidar:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PNPM_HOME', '/home/sam/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble')]), 'shell': False}
+[2.884744] (3d_lidar) StdoutLine: {'line': b'writing 3d_lidar.egg-info/PKG-INFO\n'}
+[2.885659] (3d_lidar) StdoutLine: {'line': b'writing dependency_links to 3d_lidar.egg-info/dependency_links.txt\n'}
+[2.886070] (3d_lidar) StdoutLine: {'line': b'writing entry points to 3d_lidar.egg-info/entry_points.txt\n'}
+[2.886613] (3d_lidar) StdoutLine: {'line': b'writing requirements to 3d_lidar.egg-info/requires.txt\n'}
+[2.886895] (3d_lidar) StdoutLine: {'line': b'writing top-level names to 3d_lidar.egg-info/top_level.txt\n'}
+[2.920234] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/src/demo.cpp.o\x1b[0m\n'}
+[2.921830] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/core/ldlidar_driver.cpp.o\x1b[0m\n'}
+[2.923280] (-) TimerEvent: {}
+[2.933823] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/dataprocess/lipkg.cpp.o\x1b[0m\n'}
+[2.934227] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/filter/tofbf.cpp.o\x1b[0m\n'}
+[3.001375] (3d_lidar) StdoutLine: {'line': b"reading manifest file '3d_lidar.egg-info/SOURCES.txt'\n"}
+[3.003936] (3d_lidar) StdoutLine: {'line': b"writing manifest file '3d_lidar.egg-info/SOURCES.txt'\n"}
+[3.023377] (-) TimerEvent: {}
+[3.049214] (3d_lidar) StdoutLine: {'line': b'running build_ext\n'}
+[3.050349] (3d_lidar) StdoutLine: {'line': b'Creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d-lidar.egg-link (link to .)\n'}
+[3.051911] (3d_lidar) StdoutLine: {'line': b'Installing joint_spinner script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar\n'}
+[3.052207] (3d_lidar) StdoutLine: {'line': b'Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar\n'}
+[3.052437] (3d_lidar) StdoutLine: {'line': b'Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar\n'}
+[3.052831] (3d_lidar) StdoutLine: {'line': b'\n'}
+[3.053017] (3d_lidar) StdoutLine: {'line': b'Installed /home/sam/stalkerProject/StalkerProject/build/3d_lidar\n'}
+[3.062058] (3d_lidar) StdoutLine: {'line': b'running symlink_data\n'}
+[3.123479] (-) TimerEvent: {}
+[3.124157] (3d_lidar) CommandEnded: {'returncode': 0}
+[3.163934] (3d_lidar) JobEnded: {'identifier': '3d_lidar', 'rc': 0}
+[3.223585] (-) TimerEvent: {}
+[3.326840] (-) TimerEvent: {}
+[3.427196] (-) TimerEvent: {}
+[3.528185] (-) TimerEvent: {}
+[3.630985] (-) TimerEvent: {}
+[3.731324] (-) TimerEvent: {}
+[3.833076] (-) TimerEvent: {}
+[3.935854] (-) TimerEvent: {}
+[4.036194] (-) TimerEvent: {}
+[4.138843] (-) TimerEvent: {}
+[4.241051] (-) TimerEvent: {}
+[4.342843] (-) TimerEvent: {}
+[4.443359] (-) TimerEvent: {}
+[4.543713] (-) TimerEvent: {}
+[4.646853] (-) TimerEvent: {}
+[4.747206] (-) TimerEvent: {}
+[4.820400] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/logger/log_module.cpp.o\x1b[0m\n'}
+[4.847316] (-) TimerEvent: {}
+[4.949844] (-) TimerEvent: {}
+[4.979926] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/networkcom/network_socket_interface_linux.cpp.o\x1b[0m\n'}
+[5.010869] (ldlidar_stl_ros2) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/serialcom/serial_interface_linux.cpp.o\x1b[0m\n'}
+[5.049976] (-) TimerEvent: {}
+[5.150312] (-) TimerEvent: {}
+[5.250642] (-) TimerEvent: {}
+[5.355835] (-) TimerEvent: {}
+[5.456219] (-) TimerEvent: {}
+[5.557360] (-) TimerEvent: {}
+[5.657744] (-) TimerEvent: {}
+[5.758090] (-) TimerEvent: {}
+[5.858517] (-) TimerEvent: {}
+[5.961025] (-) TimerEvent: {}
+[6.061702] (-) TimerEvent: {}
+[6.162055] (-) TimerEvent: {}
+[6.262482] (-) TimerEvent: {}
+[6.362843] (-) TimerEvent: {}
+[6.468846] (-) TimerEvent: {}
+[6.569180] (-) TimerEvent: {}
+[6.669671] (-) TimerEvent: {}
+[6.770001] (-) TimerEvent: {}
+[6.870352] (-) TimerEvent: {}
+[6.970684] (-) TimerEvent: {}
+[7.071248] (-) TimerEvent: {}
+[7.171743] (-) TimerEvent: {}
+[7.272299] (-) TimerEvent: {}
+[7.372996] (-) TimerEvent: {}
+[7.473368] (-) TimerEvent: {}
+[7.573698] (-) TimerEvent: {}
+[7.675852] (-) TimerEvent: {}
+[7.776200] (-) TimerEvent: {}
+[7.878843] (-) TimerEvent: {}
+[7.979171] (-) TimerEvent: {}
+[8.079665] (-) TimerEvent: {}
+[8.180003] (-) TimerEvent: {}
+[8.280347] (-) TimerEvent: {}
+[8.380867] (-) TimerEvent: {}
+[8.481747] (-) TimerEvent: {}
+[8.582484] (-) TimerEvent: {}
+[8.682846] (-) TimerEvent: {}
+[8.783602] (-) TimerEvent: {}
+[8.883904] (-) TimerEvent: {}
+[8.984239] (-) TimerEvent: {}
+[9.084573] (-) TimerEvent: {}
+[9.186838] (-) TimerEvent: {}
+[9.287180] (-) TimerEvent: {}
+[9.387854] (-) TimerEvent: {}
+[9.488161] (-) TimerEvent: {}
+[9.588630] (-) TimerEvent: {}
+[9.689122] (-) TimerEvent: {}
+[9.789620] (-) TimerEvent: {}
+[9.890124] (-) TimerEvent: {}
+[9.990599] (-) TimerEvent: {}
+[10.091282] (-) TimerEvent: {}
+[10.192208] (-) TimerEvent: {}
+[10.293847] (-) TimerEvent: {}
+[10.394008] (ldlidar_stl_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable ldlidar_stl_ros2_node\x1b[0m\n'}
+[10.394236] (-) TimerEvent: {}
+[10.495881] (-) TimerEvent: {}
+[10.596247] (-) TimerEvent: {}
+[10.696661] (-) TimerEvent: {}
+[10.776737] (ldlidar_stl_ros2) StdoutLine: {'line': b'[100%] Built target ldlidar_stl_ros2_node\n'}
+[10.788194] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[10.788987] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'install'}
+[10.796788] (-) TimerEvent: {}
+[10.797998] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2'], 'cwd': '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sam'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sam'), ('OLDPWD', '/home/sam/stalkerProject'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2498'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sam'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sam'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/sam/.local/share/pnpm:/home/sam/taoStuff/tao_tutorials/setup/ngc-cli:/opt/ros/humble/bin:/home/sam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sam-ThinkPad-E14:@/tmp/.ICE-unix/2312,unix/sam-ThinkPad-E14:/tmp/.ICE-unix/2312'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/05254f34_49c0_4a7a_a3aa_ee3bdcc708e9'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P70TM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.118'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/sam/stalkerProject/StalkerProject/build/3d_lidar:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PNPM_HOME', '/home/sam/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/sam/stalkerProject/StalkerProject/install/3d_lidar:/opt/ros/humble')]), 'shell': False}
+[10.805964] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.807106] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[10.807290] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/lib/ldlidar_stl_ros2/ldlidar_stl_ros2_node\n'}
+[10.818824] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld06.launch.py\n'}
+[10.829000] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld19.launch.py\n'}
+[10.840794] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/stl27l.launch.py\n'}
+[10.852099] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld06.launch.py\n'}
+[10.860847] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld19.launch.py\n'}
+[10.869606] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_stl27l.launch.py\n'}
+[10.880863] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//rviz2/ldlidar.rviz\n'}
+[10.889607] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ament_index/resource_index/package_run_dependencies/ldlidar_stl_ros2\n'}
+[10.896871] (-) TimerEvent: {}
+[10.898944] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ament_index/resource_index/parent_prefix_path/ldlidar_stl_ros2\n'}
+[10.907324] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.sh\n'}
+[10.916021] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.dsv\n'}
+[10.925221] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.sh\n'}
+[10.935127] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.dsv\n'}
+[10.946366] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.bash\n'}
+[10.955128] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.sh\n'}
+[10.963764] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.zsh\n'}
+[10.976828] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.dsv\n'}
+[10.987228] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.dsv\n'}
+[10.998481] (-) TimerEvent: {}
+[10.999277] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ament_index/resource_index/packages/ldlidar_stl_ros2\n'}
+[11.008289] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config.cmake\n'}
+[11.017860] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config-version.cmake\n'}
+[11.029313] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Symlinking: /home/sam/stalkerProject/StalkerProject/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.xml\n'}
+[11.040034] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[11.059360] (ldlidar_stl_ros2) JobEnded: {'identifier': 'ldlidar_stl_ros2', 'rc': 0}
+[11.060224] (-) EventReactorShutdown: {}

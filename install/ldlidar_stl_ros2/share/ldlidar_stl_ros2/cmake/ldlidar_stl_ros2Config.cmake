@@ -1,0 +1,1 @@
+/home/sam/stalkerProject/StalkerProject/build/ldlidar_stl_ros2/ament_cmake_core/ldlidar_stl_ros2Config.cmake

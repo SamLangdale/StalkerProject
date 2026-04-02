@@ -1,0 +1,18 @@
+running develop
+running egg_info
+creating 3d_lidar.egg-info
+writing 3d_lidar.egg-info/PKG-INFO
+writing dependency_links to 3d_lidar.egg-info/dependency_links.txt
+writing requirements to 3d_lidar.egg-info/requires.txt
+writing top-level names to 3d_lidar.egg-info/top_level.txt
+writing manifest file '3d_lidar.egg-info/SOURCES.txt'
+reading manifest file '3d_lidar.egg-info/SOURCES.txt'
+writing manifest file '3d_lidar.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d-lidar.egg-link (link to .)
+
+Installed /home/sam/stalkerProject/StalkerProject/build/3d_lidar
+running symlink_data
+creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/ament_index/resource_index/packages
+symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/resource/3d_lidar -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/ament_index/resource_index/packages
+symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/package.xml -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar

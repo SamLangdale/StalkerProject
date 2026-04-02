@@ -1,0 +1,28 @@
+running egg_info
+writing ../../build/3d_lidar/3d_lidar.egg-info/PKG-INFO
+writing dependency_links to ../../build/3d_lidar/3d_lidar.egg-info/dependency_links.txt
+writing entry points to ../../build/3d_lidar/3d_lidar.egg-info/entry_points.txt
+writing requirements to ../../build/3d_lidar/3d_lidar.egg-info/requires.txt
+writing top-level names to ../../build/3d_lidar/3d_lidar.egg-info/top_level.txt
+reading manifest file '../../build/3d_lidar/3d_lidar.egg-info/SOURCES.txt'
+writing manifest file '../../build/3d_lidar/3d_lidar.egg-info/SOURCES.txt'
+running build
+running build_py
+copying 3d_lidar/TF_broadcast.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+copying 3d_lidar/scan_3d.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+copying 3d_lidar/__init__.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+running install
+running install_lib
+running install_data
+copying resource/3d_lidar -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/ament_index/resource_index/packages
+copying package.xml -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar
+copying launch/view_cart.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+copying launch/spawn_cart_gazebo.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+copying ../../model/robot.urdf -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model
+running install_egg_info
+removing '/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d_lidar-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/3d_lidar/3d_lidar.egg-info to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d_lidar-0.0.0-py3.10.egg-info
+running install_scripts
+Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+writing list of installed files to '/home/sam/stalkerProject/StalkerProject/build/3d_lidar/install.log'

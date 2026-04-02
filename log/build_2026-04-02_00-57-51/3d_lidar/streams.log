@@ -1,0 +1,34 @@
+[61.094s] Invoking command in '/home/sam/stalkerProject/StalkerProject/src/3d_lidar': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/3d_lidar build --build-base /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build install --record /home/sam/stalkerProject/StalkerProject/build/3d_lidar/install.log --single-version-externally-managed install_data
+[61.630s] running egg_info
+[61.660s] writing ../../build/3d_lidar/3d_lidar.egg-info/PKG-INFO
+[61.661s] writing dependency_links to ../../build/3d_lidar/3d_lidar.egg-info/dependency_links.txt
+[61.663s] writing entry points to ../../build/3d_lidar/3d_lidar.egg-info/entry_points.txt
+[61.663s] writing requirements to ../../build/3d_lidar/3d_lidar.egg-info/requires.txt
+[61.663s] writing top-level names to ../../build/3d_lidar/3d_lidar.egg-info/top_level.txt
+[61.748s] reading manifest file '../../build/3d_lidar/3d_lidar.egg-info/SOURCES.txt'
+[61.750s] writing manifest file '../../build/3d_lidar/3d_lidar.egg-info/SOURCES.txt'
+[61.750s] running build
+[61.750s] running build_py
+[61.750s] copying 3d_lidar/TF_broadcast.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+[61.750s] copying 3d_lidar/scan_3d.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+[61.751s] copying 3d_lidar/__init__.py -> /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build/lib/3d_lidar
+[61.751s] running install
+[61.757s] running install_lib
+[61.794s] running install_data
+[61.794s] copying resource/3d_lidar -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/ament_index/resource_index/packages
+[61.794s] copying package.xml -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar
+[61.795s] creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+[61.795s] copying launch/view_cart.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+[61.795s] copying launch/spawn_cart_gazebo.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+[61.795s] creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model
+[61.795s] copying ../../model/robot.urdf -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model
+[61.795s] creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model/meshes
+[61.795s] copying ../../model/meshes/Link_1.stl -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model/meshes
+[61.799s] running install_egg_info
+[61.867s] removing '/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d_lidar-0.0.0-py3.10.egg-info' (and everything under it)
+[61.868s] Copying ../../build/3d_lidar/3d_lidar.egg-info to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d_lidar-0.0.0-py3.10.egg-info
+[61.869s] running install_scripts
+[62.195s] Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[62.196s] Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[62.198s] writing list of installed files to '/home/sam/stalkerProject/StalkerProject/build/3d_lidar/install.log'
+[62.252s] Invoked command in '/home/sam/stalkerProject/StalkerProject/src/3d_lidar' returned '0': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/3d_lidar build --build-base /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build install --record /home/sam/stalkerProject/StalkerProject/build/3d_lidar/install.log --single-version-externally-managed install_data
