@@ -1,0 +1,1 @@
+/home/sam/stalkerProject/StalkerProject/stalker_ros/src/stalker/setup.py

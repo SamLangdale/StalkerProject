@@ -1,0 +1,17 @@
+[2.123s] Invoking command in '/home/sam/stalkerProject/StalkerProject/build/stalker': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/stalker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/stalker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/stalker/build --no-deps symlink_data
+[2.840s] running develop
+[3.291s] running egg_info
+[3.319s] writing stalker.egg-info/PKG-INFO
+[3.320s] writing dependency_links to stalker.egg-info/dependency_links.txt
+[3.320s] writing entry points to stalker.egg-info/entry_points.txt
+[3.320s] writing requirements to stalker.egg-info/requires.txt
+[3.321s] writing top-level names to stalker.egg-info/top_level.txt
+[3.391s] reading manifest file 'stalker.egg-info/SOURCES.txt'
+[3.392s] writing manifest file 'stalker.egg-info/SOURCES.txt'
+[3.422s] running build_ext
+[3.423s] Creating /home/sam/stalkerProject/StalkerProject/install/stalker/lib/python3.10/site-packages/stalker.egg-link (link to .)
+[3.424s] Installing cloud_reader script to /home/sam/stalkerProject/StalkerProject/install/stalker/lib/stalker
+[3.424s] 
+[3.424s] Installed /home/sam/stalkerProject/StalkerProject/build/stalker
+[3.424s] running symlink_data
+[3.482s] Invoked command in '/home/sam/stalkerProject/StalkerProject/build/stalker' returned '0': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/stalker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/stalker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/stalker/build --no-deps symlink_data

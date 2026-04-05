@@ -1,0 +1,25 @@
+[2.010s] Invoking command in '/home/sam/stalkerProject/StalkerProject/build/3d_lidar': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build --no-deps symlink_data --force
+[2.611s] running develop
+[3.065s] running egg_info
+[3.110s] writing 3d_lidar.egg-info/PKG-INFO
+[3.111s] writing dependency_links to 3d_lidar.egg-info/dependency_links.txt
+[3.112s] writing entry points to 3d_lidar.egg-info/entry_points.txt
+[3.112s] writing requirements to 3d_lidar.egg-info/requires.txt
+[3.112s] writing top-level names to 3d_lidar.egg-info/top_level.txt
+[3.206s] reading manifest file '3d_lidar.egg-info/SOURCES.txt'
+[3.210s] writing manifest file '3d_lidar.egg-info/SOURCES.txt'
+[3.269s] running build_ext
+[3.270s] Creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d-lidar.egg-link (link to .)
+[3.271s] Installing joint_spinner script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[3.271s] Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[3.271s] Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[3.271s] 
+[3.272s] Installed /home/sam/stalkerProject/StalkerProject/build/3d_lidar
+[3.272s] running symlink_data
+[3.273s] symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/resource/3d_lidar -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/ament_index/resource_index/packages
+[3.274s] symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/package.xml -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar
+[3.275s] symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/launch/view_cart.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+[3.275s] symbolically linking /home/sam/stalkerProject/StalkerProject/build/3d_lidar/launch/spawn_cart_gazebo.launch.py -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/launch
+[3.278s] symbolically linking /home/sam/stalkerProject/StalkerProject/model/robot.urdf -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model
+[3.278s] symbolically linking /home/sam/stalkerProject/StalkerProject/model/meshes/Link_1.stl -> /home/sam/stalkerProject/StalkerProject/install/3d_lidar/share/3d_lidar/model/meshes
+[3.356s] Invoked command in '/home/sam/stalkerProject/StalkerProject/build/3d_lidar' returned '0': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build --no-deps symlink_data --force

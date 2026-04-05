@@ -10,8 +10,8 @@ class LidarJointSpinner(Node):
         super().__init__('lidar_joint_spinner')
 
         self.declare_parameter('joint_name', 'base_to_lidar_rotator_joint')
-        self.declare_parameter('speed_rad_s', 0.5)
-        self.declare_parameter('publish_rate_hz', 50.0)
+        self.declare_parameter('speed_rad_s', 1.0)
+        self.declare_parameter('publish_rate_hz', 250.0)
         self.declare_parameter('start_angle_rad', 0.0)
 
         self.joint_name = str(self.get_parameter('joint_name').value)

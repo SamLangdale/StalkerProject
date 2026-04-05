@@ -14,6 +14,9 @@ def load_robot_description(urdf_path):
 
 def generate_launch_description():
     package_share = get_package_share_directory('3d_lidar')
+    # debug param for simulated motion
+    spin_speed_rad_s = LaunchConfiguration('spin_speed_rad_s')
+    spin_publish_rate_hz = LaunchConfiguration('spin_publish_rate_hz')
     lidar_product_name = LaunchConfiguration('lidar_product_name')
     lidar_port_name = LaunchConfiguration('lidar_port_name')
     lidar_port_baudrate = LaunchConfiguration('lidar_port_baudrate')
@@ -22,6 +25,16 @@ def generate_launch_description():
     robot_description = load_robot_description(urdf_path)
 
     return LaunchDescription([
+        DeclareLaunchArgument(
+            'spin_speed_rad_s',
+            default_value='1.0',
+            description='Rotating lidar joint speed in radians per second',
+        ),
+        DeclareLaunchArgument(
+            'spin_publish_rate_hz',
+            default_value='250.0',
+            description='Joint state publish rate for the rotating lidar',
+        ),
         DeclareLaunchArgument(
             'lidar_product_name',
             default_value='LDLiDAR_STL27L',
@@ -54,8 +67,8 @@ def generate_launch_description():
             name='lidar_joint_spinner',
             parameters=[{
                 'joint_name': 'base_to_lidar_rotator_joint',
-                'speed_rad_s': 0.5,
-                'publish_rate_hz': 50.0,
+                'speed_rad_s': spin_speed_rad_s,
+                'publish_rate_hz': spin_publish_rate_hz,
             }],
         ),
         Node(

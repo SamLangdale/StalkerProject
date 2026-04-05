@@ -1,65 +1,227 @@
 #!/usr/bin/env python3
 
-#import math
+from collections import deque
+import math
 
 import rclpy
+from rclpy.duration import Duration
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan, PointCloud2
+from sensor_msgs_py import point_cloud2
 from laser_geometry import LaserProjection
+from std_msgs.msg import Header
+from tf2_ros import Buffer, TransformException, TransformListener
 
 
 class Scan3DNode(Node):
     def __init__(self):
         super().__init__('scan_3d_node')
+
+        self.declare_parameter('scan_topic', '/scan')
+        self.declare_parameter('cloud_topic', '/cloud')
+        self.declare_parameter('fixed_frame', 'base_link')
+        self.declare_parameter('accumulation_time_s', 2.0)
+        self.declare_parameter('max_points', 120000)
+        self.declare_parameter('transform_timeout_s', 0.1)
+        self.declare_parameter('min_range_m', 0.0)
+        self.declare_parameter('max_range_m', 0.0)
+
+        scan_topic = str(self.get_parameter('scan_topic').value)
+        cloud_topic = str(self.get_parameter('cloud_topic').value)
+        self.fixed_frame = str(self.get_parameter('fixed_frame').value)
+        self.accumulation_time_s = float(
+            self.get_parameter('accumulation_time_s').value
+        )
+        self.max_points = int(self.get_parameter('max_points').value)
+        transform_timeout_s = float(
+            self.get_parameter('transform_timeout_s').value
+        )
+        self.min_range_override_m = float(self.get_parameter('min_range_m').value)
+        self.max_range_override_m = float(self.get_parameter('max_range_m').value)
+
         self.projector = LaserProjection()
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
+        self.transform_timeout = Duration(seconds=transform_timeout_s)
+
+        self.scan_slices = deque()
+        self.total_points = 0
+        self.tf_warning_count = 0
+
         self.subscription = self.create_subscription(
             LaserScan,
-            '/scan',
+            scan_topic,
             self.scan_callback,
             10,
         )
+        self.pub = self.create_publisher(PointCloud2, cloud_topic, 10)
 
-        self.pub = self.create_publisher(
-            PointCloud2,
-            '/cloud',
-            10
+        self.get_logger().info(
+            f'Accumulating 3D cloud from {scan_topic} into {cloud_topic} '
+            f'in frame {self.fixed_frame}'
         )
-        self.get_logger().info('Scan-3d node subscribed to /scan')
 
     def scan_callback(self, msg: LaserScan) -> None:
-        # valid_ranges = [
-        #     distance for distance in msg.ranges
-        #     if math.isfinite(distance) and msg.range_min <= distance <= msg.range_max
-        # ]
+        filtered_scan = self.filter_scan(msg)
+        if filtered_scan is None:
+            return
 
-        # if not valid_ranges:
-        #     self.get_logger().warn('Received /scan message with no valid ranges')
-        #     return
-
-        # min_range = min(valid_ranges)
-        # max_range = max(valid_ranges)
-        # sample_count = len(valid_ranges)
-
-        # self.get_logger().info(
-        #     'Laser scan received: '
-        #     f'{sample_count} valid points, '
-        #     f'min={min_range:.2f} m, '
-        #     f'max={max_range:.2f} m, '
-        #     f'angle_min={msg.angle_min:.2f} rad, '
-        #     f'angle_max={msg.angle_max:.2f} rad'
-        # )
         try:
-            cloud_msg = self.projector.projectLaser(
-                msg,
+            slice_cloud = self.projector.projectLaser(
+                filtered_scan,
                 channel_options=LaserProjection.ChannelOption.NONE,
             )
-            cloud_msg.header = msg.header
-            self.pub.publish(cloud_msg)
-        except Exception as e:
-            self.get_logger().error(f'Projection failed: {type(e).__name__}: {e}')
+            transform = self.tf_buffer.lookup_transform(
+                self.fixed_frame,
+                slice_cloud.header.frame_id,
+                rclpy.time.Time.from_msg(slice_cloud.header.stamp),
+                timeout=self.transform_timeout,
+            )
+        except TransformException as exc:
+            self.tf_warning_count += 1
+            if self.tf_warning_count <= 5 or self.tf_warning_count % 25 == 0:
+                self.get_logger().warn(
+                    f'Unable to transform scan from {msg.header.frame_id} '
+                    f'to {self.fixed_frame}: {exc}'
+                )
+            return
+        except Exception as exc:
+            self.get_logger().error(f'Projection failed: {type(exc).__name__}: {exc}')
+            return
 
+        self.tf_warning_count = 0
+        transformed_points = self.transform_points(slice_cloud, transform)
+        if not transformed_points:
+            return
 
+        stamp_ns = self.stamp_to_nanoseconds(msg.header.stamp)
+        self.scan_slices.append((stamp_ns, transformed_points))
+        self.total_points += len(transformed_points)
 
+        self.trim_old_slices(stamp_ns)
+        self.trim_excess_points()
+        self.publish_cloud(msg.header.stamp)
+
+    def filter_scan(self, msg: LaserScan) -> LaserScan | None:
+        min_range = (
+            self.min_range_override_m
+            if self.min_range_override_m > 0.0
+            else msg.range_min
+        )
+        max_range = (
+            self.max_range_override_m
+            if self.max_range_override_m > 0.0
+            else msg.range_max
+        )
+
+        filtered_ranges = []
+        valid_points = 0
+
+        for distance in msg.ranges:
+            is_valid = math.isfinite(distance) and min_range <= distance <= max_range
+            if is_valid:
+                filtered_ranges.append(distance)
+                valid_points += 1
+            else:
+                filtered_ranges.append(float('inf'))
+
+        if valid_points == 0:
+            self.get_logger().debug('Received /scan message with no valid ranges')
+            return None
+
+        filtered_scan = LaserScan()
+        filtered_scan.header = msg.header
+        filtered_scan.angle_min = msg.angle_min
+        filtered_scan.angle_max = msg.angle_max
+        filtered_scan.angle_increment = msg.angle_increment
+        filtered_scan.time_increment = msg.time_increment
+        filtered_scan.scan_time = msg.scan_time
+        filtered_scan.range_min = min_range
+        filtered_scan.range_max = max_range
+        filtered_scan.ranges = filtered_ranges
+        filtered_scan.intensities = list(msg.intensities)
+        return filtered_scan
+
+    def transform_points(
+        self,
+        cloud: PointCloud2,
+        transform,
+    ) -> list[tuple[float, float, float]]:
+        tx = transform.transform.translation.x
+        ty = transform.transform.translation.y
+        tz = transform.transform.translation.z
+        qx = transform.transform.rotation.x
+        qy = transform.transform.rotation.y
+        qz = transform.transform.rotation.z
+        qw = transform.transform.rotation.w
+
+        points = []
+        for x, y, z in point_cloud2.read_points(
+            cloud,
+            field_names=('x', 'y', 'z'),
+            skip_nans=True,
+        ):
+            rx, ry, rz = self.rotate_point(x, y, z, qx, qy, qz, qw)
+            points.append((rx + tx, ry + ty, rz + tz))
+        return points
+
+    def rotate_point(
+        self,
+        x: float,
+        y: float,
+        z: float,
+        qx: float,
+        qy: float,
+        qz: float,
+        qw: float,
+    ) -> tuple[float, float, float]:
+        xx = qx * qx
+        yy = qy * qy
+        zz = qz * qz
+        xy = qx * qy
+        xz = qx * qz
+        yz = qy * qz
+        wx = qw * qx
+        wy = qw * qy
+        wz = qw * qz
+
+        rx = (1.0 - 2.0 * (yy + zz)) * x + 2.0 * (xy - wz) * y + 2.0 * (xz + wy) * z
+        ry = 2.0 * (xy + wz) * x + (1.0 - 2.0 * (xx + zz)) * y + 2.0 * (yz - wx) * z
+        rz = 2.0 * (xz - wy) * x + 2.0 * (yz + wx) * y + (1.0 - 2.0 * (xx + yy)) * z
+        return rx, ry, rz
+
+    def trim_old_slices(self, current_stamp_ns: int) -> None:
+        max_age_ns = int(self.accumulation_time_s * 1e9)
+        cutoff_ns = current_stamp_ns - max_age_ns
+
+        while self.scan_slices and self.scan_slices[0][0] < cutoff_ns:
+            _, points = self.scan_slices.popleft()
+            self.total_points -= len(points)
+
+    def trim_excess_points(self) -> None:
+        while self.scan_slices and self.total_points > self.max_points:
+            _, points = self.scan_slices.popleft()
+            self.total_points -= len(points)
+
+    def publish_cloud(self, stamp) -> None:
+        points = []
+        for _, scan_points in self.scan_slices:
+            points.extend(scan_points)
+
+        cloud_msg = point_cloud2.create_cloud_xyz32(
+            header=self.make_header(stamp),
+            points=points,
+        )
+        self.pub.publish(cloud_msg)
+
+    def make_header(self, stamp):
+        return Header(
+            stamp=stamp,
+            frame_id=self.fixed_frame,
+        )
+
+    def stamp_to_nanoseconds(self, stamp) -> int:
+        return int(stamp.sec) * 1_000_000_000 + int(stamp.nanosec)
 
 
 def main(args=None) -> None:

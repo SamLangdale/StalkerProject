@@ -1,0 +1,19 @@
+[1.785s] Invoking command in '/home/sam/stalkerProject/StalkerProject/build/3d_lidar': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build --no-deps symlink_data
+[2.323s] running develop
+[2.701s] running egg_info
+[2.730s] writing 3d_lidar.egg-info/PKG-INFO
+[2.731s] writing dependency_links to 3d_lidar.egg-info/dependency_links.txt
+[2.733s] writing entry points to 3d_lidar.egg-info/entry_points.txt
+[2.733s] writing requirements to 3d_lidar.egg-info/requires.txt
+[2.733s] writing top-level names to 3d_lidar.egg-info/top_level.txt
+[2.812s] reading manifest file '3d_lidar.egg-info/SOURCES.txt'
+[2.814s] writing manifest file '3d_lidar.egg-info/SOURCES.txt'
+[2.847s] running build_ext
+[2.848s] Creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d-lidar.egg-link (link to .)
+[2.849s] Installing joint_spinner script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[2.849s] Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[2.851s] Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+[2.851s] 
+[2.851s] Installed /home/sam/stalkerProject/StalkerProject/build/3d_lidar
+[2.852s] running symlink_data
+[2.926s] Invoked command in '/home/sam/stalkerProject/StalkerProject/build/3d_lidar' returned '0': PYTHONPATH=/home/sam/stalkerProject/StalkerProject/build/3d_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sam/stalkerProject/StalkerProject/build/3d_lidar/build --no-deps symlink_data

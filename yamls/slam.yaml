@@ -1,0 +1,56 @@
+slam_toolbox:
+  ros__parameters:
+
+    # Solver Configuration
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # Coordinate Frames
+    map_frame: map
+    odom_frame: odom
+    base_frame: base_link
+
+    # Topics
+    scan_topic: /scan
+    map_topic: /map
+
+    # Mode: mapping or localization
+    mode: mapping
+
+    # Map Configuration
+    resolution: 0.05
+    max_laser_range: 12.0
+    minimum_travel_distance: 0.5
+    minimum_travel_heading: 0.5
+    map_update_interval: 5.0
+    transform_timeout: 0.2
+    tf_buffer_duration: 30.0
+
+    # Loop Closure
+    loop_search_max_radius: 5.0
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance: 3.0
+
+    # Scan Matching
+    scan_match_minimum_response_coarse: 0.35
+    scan_match_maximum_response_coarse: 0.95
+    scan_match_minimum_response_fine: 0.45
+    scan_match_maximum_response_fine: 0.95
+
+    # Optimization
+    optimization_process_interval: 10
+    optimization_distance_threshold: 1.0
+    optimization_angle_threshold: 0.5
+
+    # Debug
+    debug_logging: false
+    throttle_scans: 1
+
+    # Serialization
+    map_file_name: /tmp/turtlebot_map
+    map_start_pose: [0.0, 0.0, 0.0]
+    map_start_at_dock: true

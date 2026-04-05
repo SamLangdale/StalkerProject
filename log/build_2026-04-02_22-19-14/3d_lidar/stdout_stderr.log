@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing 3d_lidar.egg-info/PKG-INFO
+writing dependency_links to 3d_lidar.egg-info/dependency_links.txt
+writing entry points to 3d_lidar.egg-info/entry_points.txt
+writing requirements to 3d_lidar.egg-info/requires.txt
+writing top-level names to 3d_lidar.egg-info/top_level.txt
+reading manifest file '3d_lidar.egg-info/SOURCES.txt'
+writing manifest file '3d_lidar.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/python3.10/site-packages/3d-lidar.egg-link (link to .)
+Installing joint_spinner script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+Installing scan_3d script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+Installing tf_broadcast script to /home/sam/stalkerProject/StalkerProject/install/3d_lidar/lib/3d_lidar
+
+Installed /home/sam/stalkerProject/StalkerProject/build/3d_lidar
+running symlink_data

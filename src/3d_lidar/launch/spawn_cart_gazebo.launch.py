@@ -22,6 +22,10 @@ def generate_launch_description():
     gazebo_model_root = os.path.dirname(package_share)
     existing_model_path = os.environ.get('GAZEBO_MODEL_PATH', '')
     existing_resource_path = os.environ.get('GAZEBO_RESOURCE_PATH', '')
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    cloud_scale = LaunchConfiguration('cloud_scale')
+    spin_speed_rad_s = LaunchConfiguration('spin_speed_rad_s')
+    spin_publish_rate_hz = LaunchConfiguration('spin_publish_rate_hz')
     lidar_product_name = LaunchConfiguration('lidar_product_name')
     lidar_port_name = LaunchConfiguration('lidar_port_name')
     lidar_port_baudrate = LaunchConfiguration('lidar_port_baudrate')
@@ -30,6 +34,26 @@ def generate_launch_description():
     robot_description = load_robot_description(urdf_path)
 
     return LaunchDescription([
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='false',
+            description='Use Gazebo /clock instead of system time',
+        ),
+        DeclareLaunchArgument(
+            'cloud_scale',
+            default_value='1.0',
+            description='Uniform scale applied to the published point cloud',
+        ),
+        DeclareLaunchArgument(
+            'spin_speed_rad_s',
+            default_value='4.0',
+            description='Rotating lidar joint speed in radians per second',
+        ),
+        DeclareLaunchArgument(
+            'spin_publish_rate_hz',
+            default_value='100.0',
+            description='Joint state publish rate for the rotating lidar',
+        ),
         DeclareLaunchArgument(
             'lidar_product_name',
             default_value='LDLiDAR_LD06',
@@ -70,7 +94,10 @@ def generate_launch_description():
             package='robot_state_publisher',
             executable='robot_state_publisher',
             name='robot_state_publisher',
-            parameters=[{'robot_description': robot_description}],
+            parameters=[{
+                'robot_description': robot_description,
+                'use_sim_time': use_sim_time,
+            }],
         ),
         Node(
             package='3d_lidar',
@@ -78,8 +105,9 @@ def generate_launch_description():
             name='lidar_joint_spinner',
             parameters=[{
                 'joint_name': 'base_to_lidar_rotator_joint',
-                'speed_rad_s': 0.5,
-                'publish_rate_hz': 50.0,
+                'speed_rad_s': spin_speed_rad_s,
+                'publish_rate_hz': spin_publish_rate_hz,
+                'use_sim_time': use_sim_time,
             }],
         ),
         Node(
@@ -97,6 +125,7 @@ def generate_launch_description():
                 'enable_angle_crop_func': False,
                 'angle_crop_min': 135.0,
                 'angle_crop_max': 225.0,
+                'use_sim_time': use_sim_time,
             }],
         ),
         Node(
@@ -104,6 +133,10 @@ def generate_launch_description():
             executable='scan_3d',
             name='scan_3d',
             output='screen',
+            parameters=[{
+                'use_sim_time': use_sim_time,
+                'cloud_scale': cloud_scale,
+            }],
         ),
         Node(
             package='gazebo_ros',
