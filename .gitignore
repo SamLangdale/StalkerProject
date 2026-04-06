@@ -1,0 +1,9 @@
+PiLiDAR-main/
+stalker_ros/log/
+stalker_ros/build/
+stalker_ros/install/
+
+__pycache__/
+*.pyc
+.venv/
+venv/

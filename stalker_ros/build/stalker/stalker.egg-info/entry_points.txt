@@ -1,3 +1,0 @@
-[console_scripts]
-cloud_reader = stalker.cloud_reader:main
-
