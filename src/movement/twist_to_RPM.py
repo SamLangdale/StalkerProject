@@ -6,6 +6,9 @@ from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64
 import math
 
+
+
+
 class TwistToRpm(Node):
     def __init__(self):
         super().__init__('twist_to_rpm')
@@ -43,8 +46,13 @@ class TwistToRpm(Node):
         v_right = linear_velocity + (angular_velocity * self.wheel_base / 2)
 
         # Convert linear velocity to RPM
-        left_rpm = (v_left / (2 * math.pi * self.wheel_radius)) * 60
+        left_rpm = (v_left / (2 * math.pi * self.wheel_radius)) * 60 
         right_rpm = (v_right / (2 * math.pi * self.wheel_radius)) * 60
+
+
+        #Todo: gearbox reduction calculation if needed 4 rotation of motor - 1 rotation of wheel -> multiply by 4
+        left_rpm *= 4
+        right_rpm *= 4
 
         # Clamp RPM to max_rpm
         left_rpm = max(-self.max_rpm, min(self.max_rpm, left_rpm))

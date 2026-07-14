@@ -17,6 +17,7 @@ def generate_launch_description():
     # debug param for simulated motion
     spin_speed_rad_s = LaunchConfiguration('spin_speed_rad_s')
     spin_publish_rate_hz = LaunchConfiguration('spin_publish_rate_hz')
+    joint_timestamp_offset_s = LaunchConfiguration('joint_timestamp_offset_s')
     lidar_product_name = LaunchConfiguration('lidar_product_name')
     lidar_port_name = LaunchConfiguration('lidar_port_name')
     lidar_port_baudrate = LaunchConfiguration('lidar_port_baudrate')
@@ -34,6 +35,11 @@ def generate_launch_description():
             'spin_publish_rate_hz',
             default_value='250.0',
             description='Joint state publish rate for the rotating lidar',
+        ),
+        DeclareLaunchArgument(
+            'joint_timestamp_offset_s',
+            default_value='0.05',
+            description='Backdate joint states slightly so TF is available for scan timestamps',
         ),
         DeclareLaunchArgument(
             'lidar_product_name',
@@ -69,6 +75,7 @@ def generate_launch_description():
                 'joint_name': 'base_to_lidar_rotator_joint',
                 'speed_rad_s': spin_speed_rad_s,
                 'publish_rate_hz': spin_publish_rate_hz,
+                'timestamp_offset_s': joint_timestamp_offset_s,
             }],
         ),
         Node(
@@ -93,6 +100,9 @@ def generate_launch_description():
             executable='scan_3d',
             name='scan_3d',
             output='screen',
+            parameters=[{
+                'use_latest_transform': True,
+            }],
         ),
         Node(
             package='robot_state_publisher',

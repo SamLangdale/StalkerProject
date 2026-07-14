@@ -1,0 +1,4 @@
+[console_scripts]
+joint_spinner = 3d_lidar.joint_spinner:main
+scan_3d = 3d_lidar.scan_3d:main
+tf_broadcast = 3d_lidar.TF_broadcast:main

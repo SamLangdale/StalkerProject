@@ -1,1 +1,59 @@
-/home/sam/stalkerProject/StalkerProject/model/robot.urdf
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="robot">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://3d_lidar/model/meshes/Link_1.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://3d_lidar/model/meshes/Link_1.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.10" ixy="0.0" ixz="0.0" iyy="0.10" iyz="0.0" izz="0.10"/>
+    </inertial>
+  </link>
+
+  <link name="lidar_rotator">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.04"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.15 0.15 0.15 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_lidar_rotator_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="lidar_rotator"/>
+    <origin xyz="-0.934 -0.311 0.7" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.3 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lidar_rotator_to_laser_joint" type="fixed">
+    <parent link="lidar_rotator"/>
+    <child link="laser"/>
+    <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+  </joint>
+</robot>

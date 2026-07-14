@@ -1,1 +1,0 @@
-/home/sam/stalkerProject/StalkerProject/src/3d_lidar/setup.py

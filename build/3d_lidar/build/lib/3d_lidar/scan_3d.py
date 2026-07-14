@@ -17,14 +17,18 @@ class Scan3DNode(Node):
     def __init__(self):
         super().__init__('scan_3d_node')
 
+
+    # Params
         self.declare_parameter('scan_topic', '/scan')
         self.declare_parameter('cloud_topic', '/cloud')
         self.declare_parameter('fixed_frame', 'base_link')
-        self.declare_parameter('accumulation_time_s', 2.0)
+        self.declare_parameter('accumulation_time_s', 5.0)
         self.declare_parameter('max_points', 120000)
         self.declare_parameter('transform_timeout_s', 0.1)
         self.declare_parameter('min_range_m', 0.0)
         self.declare_parameter('max_range_m', 0.0)
+        self.declare_parameter('use_latest_transform', True)
+        self.declare_parameter('cloud_scale', 1)
 
         scan_topic = str(self.get_parameter('scan_topic').value)
         cloud_topic = str(self.get_parameter('cloud_topic').value)
@@ -38,15 +42,20 @@ class Scan3DNode(Node):
         )
         self.min_range_override_m = float(self.get_parameter('min_range_m').value)
         self.max_range_override_m = float(self.get_parameter('max_range_m').value)
+        self.use_latest_transform = bool(
+            self.get_parameter('use_latest_transform').value
+        )
+        self.cloud_scale = float(self.get_parameter('cloud_scale').value)
 
         self.projector = LaserProjection()
-        self.tf_buffer = Buffer()
+        self.tf_buffer = Buffer() 
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.transform_timeout = Duration(seconds=transform_timeout_s)
 
         self.scan_slices = deque()
         self.total_points = 0
         self.tf_warning_count = 0
+        self.latest_transform_warning_count = 0
 
         self.subscription = self.create_subscription(
             LaserScan,
@@ -60,23 +69,30 @@ class Scan3DNode(Node):
             f'Accumulating 3D cloud from {scan_topic} into {cloud_topic} '
             f'in frame {self.fixed_frame}'
         )
+        if self.use_latest_transform:
+            self.get_logger().info(
+                'scan_3d will fall back to the latest available transform '
+                'when scan-time lookup fails'
+            )
+        if self.cloud_scale != 1.0:
+            self.get_logger().info(
+                f'scan_3d is scaling published cloud coordinates by '
+                f'{self.cloud_scale:.3f}'
+            )
 
     def scan_callback(self, msg: LaserScan) -> None:
-        filtered_scan = self.filter_scan(msg)
+        filtered_scan = self.filter_scan(msg) #removes invalid ranges and applies overrides
         if filtered_scan is None:
             return
 
         try:
+            # laser scan to point cloud in the scan frame
             slice_cloud = self.projector.projectLaser(
                 filtered_scan,
                 channel_options=LaserProjection.ChannelOption.NONE,
             )
-            transform = self.tf_buffer.lookup_transform(
-                self.fixed_frame,
-                slice_cloud.header.frame_id,
-                rclpy.time.Time.from_msg(slice_cloud.header.stamp),
-                timeout=self.transform_timeout,
-            )
+            #gets transformation of laser scan to base link if available
+            transform = self.lookup_scan_transform(slice_cloud)
         except TransformException as exc:
             self.tf_warning_count += 1
             if self.tf_warning_count <= 5 or self.tf_warning_count % 25 == 0:
@@ -90,10 +106,12 @@ class Scan3DNode(Node):
             return
 
         self.tf_warning_count = 0
+        #transforms points from laser scan
         transformed_points = self.transform_points(slice_cloud, transform)
         if not transformed_points:
             return
 
+        # adds timestamp and points to the deque, then trims old slices and excess points before publishing
         stamp_ns = self.stamp_to_nanoseconds(msg.header.stamp)
         self.scan_slices.append((stamp_ns, transformed_points))
         self.total_points += len(transformed_points)
@@ -102,7 +120,10 @@ class Scan3DNode(Node):
         self.trim_excess_points()
         self.publish_cloud(msg.header.stamp)
 
-    def filter_scan(self, msg: LaserScan) -> LaserScan | None:
+
+
+    #filters out invalid readings
+    def filter_scan(self, msg: LaserScan) -> LaserScan | None: 
         min_range = (
             self.min_range_override_m
             if self.min_range_override_m > 0.0
@@ -142,11 +163,38 @@ class Scan3DNode(Node):
         filtered_scan.intensities = list(msg.intensities)
         return filtered_scan
 
-    def transform_points(
-        self,
-        cloud: PointCloud2,
-        transform,
-    ) -> list[tuple[float, float, float]]:
+    # looksup transformation from laser scan
+    def lookup_scan_transform(self, cloud: PointCloud2):
+        try:
+            return self.tf_buffer.lookup_transform(
+                self.fixed_frame,
+                cloud.header.frame_id,
+                rclpy.time.Time.from_msg(cloud.header.stamp),
+                timeout=self.transform_timeout,
+            )
+        except TransformException as exc:
+            if not self.use_latest_transform:
+                raise
+
+            self.latest_transform_warning_count += 1
+            if (
+                self.latest_transform_warning_count <= 5
+                or self.latest_transform_warning_count % 25 == 0
+            ):
+                self.get_logger().warn(
+                    'Falling back to latest transform because scan-time lookup '
+                    f'failed: {exc}'
+                )
+            # fallback if scan-time is unavailable
+            return self.tf_buffer.lookup_transform(
+                self.fixed_frame,
+                cloud.header.frame_id,
+                rclpy.time.Time(),
+                timeout=self.transform_timeout,
+            )
+
+    # transforms points from laser scan to the base link frame
+    def transform_points(self,cloud: PointCloud2,transform) -> list[tuple[float, float, float]]:
         tx = transform.transform.translation.x
         ty = transform.transform.translation.y
         tz = transform.transform.translation.z
@@ -162,7 +210,10 @@ class Scan3DNode(Node):
             skip_nans=True,
         ):
             rx, ry, rz = self.rotate_point(x, y, z, qx, qy, qz, qw)
-            points.append((rx + tx, ry + ty, rz + tz))
+            px = (rx + tx) * self.cloud_scale
+            py = (ry + ty) * self.cloud_scale
+            pz = (rz + tz) * self.cloud_scale
+            points.append((px, py, pz))
         return points
 
     def rotate_point(
@@ -189,7 +240,8 @@ class Scan3DNode(Node):
         ry = 2.0 * (xy + wz) * x + (1.0 - 2.0 * (xx + zz)) * y + 2.0 * (yz - wx) * z
         rz = 2.0 * (xz - wy) * x + 2.0 * (yz + wx) * y + (1.0 - 2.0 * (xx + yy)) * z
         return rx, ry, rz
-
+    
+    # trimming functions
     def trim_old_slices(self, current_stamp_ns: int) -> None:
         max_age_ns = int(self.accumulation_time_s * 1e9)
         cutoff_ns = current_stamp_ns - max_age_ns
@@ -203,6 +255,7 @@ class Scan3DNode(Node):
             _, points = self.scan_slices.popleft()
             self.total_points -= len(points)
 
+    # publishes the accumulated point cloud
     def publish_cloud(self, stamp) -> None:
         points = []
         for _, scan_points in self.scan_slices:
